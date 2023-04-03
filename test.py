@@ -16,3 +16,5 @@ for blob in blobs:
         caption = metadata_root.find("mediaInfo").find("caption")
         ai_caption = metadata_root.find("mediaInfo").find("aiCaption")
         print(name.text, caption.text, ai_caption.text)
+
+        
