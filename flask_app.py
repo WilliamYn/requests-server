@@ -14,14 +14,10 @@ blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 container_name = 'serverimages'
 container_client = blob_service_client.get_container_client(container_name)
 
-# captionApiUrl = os.environ['captionApiUrl']
-# translateApiUrl = os.environ['translateApiUrl']
-# faceApiUrl = os.environ['faceApiUrl']
-# logoApiUrl = os.environ['logoApiUrl']
-captionApiUrl = "http://image-caption.eastus.cloudapp.azure.com:3000"
-translateApiUrl = "https://translate-app.wittyriver-06391a5d.eastus.azurecontainerapps.io"
-faceApiUrl = "https://facerecon-app.wittyriver-06391a5d.eastus.azurecontainerapps.io"
-logoApiUrl = "https://logo-app.wittyriver-06391a5d.eastus.azurecontainerapps.io"
+captionApiUrl = os.environ['captionApiUrl']
+translateApiUrl = os.environ['translateApiUrl']
+faceApiUrl = os.environ['faceApiUrl']
+logoApiUrl = os.environ['logoApiUrl']
 
 print('========= API URLS =========')
 print(captionApiUrl)
