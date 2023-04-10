@@ -9,6 +9,7 @@ container_client = blob_service_client.get_container_client(container_name)
 folder_path = '2021/01/2021-01-03/'
 
 for i, filename in enumerate(os.listdir(folder_path)):
+    print(filename)
     file_folder_path = os.path.join(folder_path, filename)
     
     if os.path.isdir(file_folder_path):

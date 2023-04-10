@@ -10,11 +10,17 @@ blobs = container_client.list_blobs()
 
 for blob in blobs:
     if blob.name.endswith('/metadata.xml'):
+    # if blob.name == '000_8WW2BH.jpg_bkfiles/metadata.xml':
+
         metadata_buffer = container_client.get_blob_client(blob.name).download_blob().readall()
         metadata_root = ET.fromstring(metadata_buffer)
         name = metadata_root.find("general").find("fileName")
         caption = metadata_root.find("mediaInfo").find("caption")
         ai_caption = metadata_root.find("mediaInfo").find("aiCaption")
-        print(name.text, caption.text, ai_caption.text)
+        ai_generated_caption = metadata_root.find("mediaInfo").find("aiGeneratedCaption")
+        # print(name.text, caption.text, ai_caption.text, '\n\n\n', ai_generated_caption.text)
+        # if not ai_generated_caption:
+        if ai_generated_caption is None:
+            print(name.text, ai_generated_caption)
 
-        
+
