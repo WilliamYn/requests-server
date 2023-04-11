@@ -120,6 +120,7 @@ def caption_images(container_name):
 
 def caption_image(base64_str):
     print('CAPTION_IMAGE')
+    print(captionApiUrl)
     captionRes, translatedRes, faceRes, logoRes = {}, {}, '', ''
 
     try:
@@ -205,6 +206,12 @@ def get_image(filename):
 
 @app.route("/caption-single-image", methods=["GET", "POST"])
 def handle_caption_single_image():
+    print('========= API URLS =========')
+    print(captionApiUrl)
+    print(translateApiUrl)
+    print(faceApiUrl)
+    print(logoApiUrl)
+    print('============================')
     data = request.get_json()
     base64_str = data["image"]
 
